@@ -34,13 +34,23 @@ public class _01_StringMethods {
 
     // Given Strings s1 and s2, return the longer String
     public static String longerString(String s1, String s2) {
-        return null;
+    	int amount = s1.length();
+    	int amount2 = s2.length();
+    	if (amount > amount2) {
+    		return s1;
+    	}
+    	
+        return s2;
     }
 
     // If String s contains the word "underscores", change all of the spaces
     // to underscores
     public static String formatSpaces(String s) {
-        return null;
+    	if (s.contains("underscores")) {
+    		String replacedStr = s.replace(' ', '_');
+    		s = replacedStr;
+    	}
+        return s;
     }
 
     // Return the name of the person whose LAST name would appear first if they
@@ -48,7 +58,37 @@ public class _01_StringMethods {
     // You cannot assume there are no extra spaces around the name, but you can
     // assume there is only one space between the first and last name
     public static String lineLeader(String s1, String s2, String s3) {
-        return null;
+    	
+		
+    	int index = s1.trim().indexOf(' ');
+    	String strings = s1.substring(index);
+    	System.out.println(strings);
+    	
+    	int index2 = s2.trim().indexOf(' ');
+    	String	strings2 = s2.substring(index2);
+    	System.out.println(strings2);
+    	
+    	int index3 = s3.trim().indexOf(' ');
+    	String strings3 = s3.substring(index3);
+    	System.out.println(strings3);
+    	
+    	System.out.println(strings.compareTo(strings2));
+    	
+    	if(strings.compareTo(strings2)< 0) {
+    	
+    		if (strings.compareTo(strings3)<  0) {
+    			return s1;
+    		}
+    	}
+    	else if(strings.compareTo(strings2)> 0){
+    		if(strings2.compareTo(strings3)< 0);
+    		return s2;
+    	}
+    	
+    		return s3;
+    	
+    	
+        
     }
 
     // Return the sum of all numerical digits in the String
