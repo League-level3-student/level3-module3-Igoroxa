@@ -62,17 +62,17 @@ public class _01_StringMethods {
 		
     	int index = s1.trim().indexOf(' ');
     	String strings = s1.substring(index);
-    	System.out.println(strings);
+    	//System.out.println(strings);
     	
     	int index2 = s2.trim().indexOf(' ');
     	String	strings2 = s2.substring(index2);
-    	System.out.println(strings2);
+    	//System.out.println(strings2);
     	
     	int index3 = s3.trim().indexOf(' ');
     	String strings3 = s3.substring(index3);
-    	System.out.println(strings3);
+    	//System.out.println(strings3);
     	
-    	System.out.println(strings.compareTo(strings2));
+    	//System.out.println(strings.compareTo(strings2));
     	
     	if(strings.compareTo(strings2)< 0) {
     	
@@ -93,35 +93,70 @@ public class _01_StringMethods {
 
     // Return the sum of all numerical digits in the String
     public static int numeralSum(String s) {
-        return 0;
+    	int sum = 0;
+    
+    	for (int i = 0; i < s.length(); i++) {
+			if(Character.isDigit(s.charAt(i))) {
+				//System.out.println("work");
+				String temp = s.charAt(i)+ "";
+				//System.out.println(temp);
+				int unit = Integer.parseInt(temp);
+				sum = sum + unit;
+			}
+		}
+        return sum;
     }
 
     // Return the number of times String substring appears in String s
     public static int substringCount(String s, String substring) {
-        return 0;
+    	
+    	int occurs = 0;
+    	int index = s.indexOf(substring);
+    	while( index != -1) {
+    		occurs++;
+            index = s.indexOf(substring, index + substring.length());
+    	}
+        return occurs;
     }
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
-        return null;
+    	
+    	byte[] newbyte = s.getBytes();
+        return Utilities.encrypt(newbyte, (byte)key);
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
-        return null;
+    	
+        return Utilities.decrypt(s, (byte)key);
     }
 
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
-        return 0;
+    	String[] words = s.split(" ");
+    	int occurs = 0;
+    	int index = s.indexOf(substring);
+    	for (int i = 0; i < words.length; i++) {
+	
+    	System.out.println(index);
+    	while( index != -1) {
+    		occurs++;
+          index = words[i].endsWith(substring);
+    	}
+    	}
+        return occurs;
     }
 
     // Given String s, return the number of characters between the first
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
+    	int distance = 0;
+    	
+    	index = 
         return 0;
     }
 
