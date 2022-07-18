@@ -140,14 +140,13 @@ public class _01_StringMethods {
     	int occurs = 0;
     	int index = s.indexOf(substring);
     	for (int i = 0; i < words.length; i++) {
-	
-    	System.out.println(index);
-    	while( index != -1) {
-    		occurs++;
-          index = words[i].endsWith(substring);
+	if (words[i].endsWith(substring)) {
+		occurs++;
+	}
+    	//System.out.println(index);
+    	
     	}
-    	}
-        return occurs;
+    	return occurs;
     }
 
     // Given String s, return the number of characters between the first
@@ -155,16 +154,35 @@ public class _01_StringMethods {
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
     	int distance = 0;
+    	int index1 = s.indexOf(substring);
+    	int index2 = s.lastIndexOf(substring);
+    	distance = (index2-index1)-substring.length();
     	
-    	index = 
-        return 0;
+    	        return distance;
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
-        return true;
+    String[] punctuation = {".", "?", "!", ",", " ", "-", ":"};
+    for (int i = 0; i < punctuation.length; i++) {
+    s = s.replace(punctuation[i], "");
+   s = s.toLowerCase();
+    }
+   
+    System.out.println("yes");
+System.out.println(s.length());
+
+    	for (int i = 0; i < s.length(); i++) {
+			if (s.codePointAt(i) != (s.codePointAt((s.length()-i)-1))) {
+				return false;
+				
+				
+			}
+			
+		}
+    	return true;
     }
 }
 
