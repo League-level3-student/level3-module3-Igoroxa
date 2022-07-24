@@ -1,6 +1,7 @@
 package _02_The_Wave;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class _01_TheWave {
     /*
@@ -21,6 +22,13 @@ public class _01_TheWave {
     
     public static ArrayList<String> wave(String str) {
         
+        ArrayList<String> standing = new ArrayList<String>();
+       
+     
+        for (int i = 0; i < str.length(); i++) {
+        	str.charAt(i)
+			
+		}
         return null;
     }
 }

@@ -14,14 +14,24 @@ public class _03_StringBuilder {
     }
     
     public static String reverse(String str) {
-        return null;
+    	StringBuilder builder = new StringBuilder(str);
+    	builder.reverse();
+    	str = builder.toString();
+        return str;
     }
     
     public static String insert(String str, int index, char newChar) {
-        return null;
+    	StringBuilder builder = new StringBuilder(str);
+    	builder.insert(index, newChar);
+    	str = builder.toString();
+        return str;
     }
     
     public static String delete(String str, int startIndex, int endIndex) {
-        return null;
+    	StringBuilder builder = new StringBuilder(str);
+    	builder.delete(startIndex, endIndex);
+    	str = builder.toString();
+        return str;
+       
     }
 }
